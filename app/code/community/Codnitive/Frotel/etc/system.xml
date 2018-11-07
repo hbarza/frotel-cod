@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_Frotel
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+-->
+
+<config>
+	<sections>
+		<codnitivepaymentmethods translate="label" module="frotel">
+			<label>Payment Methods</label>
+			<tab>codall</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>100</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<frotel translate="label, comment" module="frotel">
+					<label>Frotel COD</label>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<heading_activation translate="label">
+							<label>Activation</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</heading_activation>
+						<sernum translate="label">
+							<label>Serial Number</label>
+							<frontend_type>obscure</frontend_type>
+							<validate>required-entry</validate>
+							<backend_model>frotel/system_config_backend_encryptedserial</backend_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</sernum>
+						<regcod translate="label">
+							<label>Registration Code</label>
+							<frontend_type>obscure</frontend_type>
+							<validate>required-entry</validate>
+							<backend_model>frotel/system_config_backend_encryptedregcode</backend_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</regcod>
+						<ownnam translate="label">
+							<label>Full Name</label>
+							<frontend_type>text</frontend_type>
+							<validate>required-entry</validate>
+							<backend_model>frotel/system_config_backend_name</backend_model>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</ownnam>
+						<ownmai translate="label">
+							<label>Email Address</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-email required-entry</validate>
+							<backend_model>frotel/system_config_backend_email</backend_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</ownmai>
+
+						<heading_account translate="label">
+							<label>Frotel Account</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>25</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</heading_account>
+						<username translate="label">
+							<label>Username</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>26</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</username>
+						<password translate="label">
+							<label>Password</label>
+							<frontend_type>password</frontend_type>
+							<sort_order>27</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</password>
+
+						<heading_config translate="label">
+							<label>Configuration</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading_config>
+						<active translate="label,tooltip,comment">
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<backend_model>frotel/system_config_backend_cert</backend_model>
+							<sort_order>31</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</active>
+						<jquery translate="label,comment">
+							<label>Load jQuery</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment><![CDATA[If you have already loaded jQuery, don't need to load it again here.]]></comment>
+						</jquery>
+						<shipping_types translate="label">
+							<label>Available Shipping Types</label>
+							<frontend_type>multiselect</frontend_type>
+							<source_model>frotel/system_config_source_shippingtypes</source_model>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</shipping_types>
+						<payment_types translate="label">
+							<label>Available Payment Types</label>
+							<frontend_type>multiselect</frontend_type>
+							<source_model>frotel/system_config_source_paymenttypes</source_model>
+							<sort_order>70</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</payment_types>
+
+						<heading_shipping translate="label">
+							<label>Shipping Settings</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>300</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</heading_shipping>
+						<shipping_title translate="label">
+							<label>Title</label>
+							<config_path>carriers/frotel/title</config_path>
+							<frontend_type>text</frontend_type>
+							<sort_order>320</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</shipping_title>
+						<orig_region translate="label">
+							<label>Original Region</label>
+							<config_path>carriers/frotel/orig_region</config_path>
+							<frontend_type>select</frontend_type>
+							<source_model>frotel/system_config_source_regions</source_model>
+							<sort_order>325</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</orig_region>
+						<orig_city translate="label">
+							<label>Original City Code</label>
+							<config_path>carriers/frotel/orig_city</config_path>
+							<frontend_type>text</frontend_type>
+							<sort_order>326</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</orig_city>
+						<shipping_sallowspecific translate="label">
+							<label>Ship to Applicable Countries</label>
+							<config_path>carriers/frotel/sallowspecific</config_path>
+							<frontend_type>select</frontend_type>
+							<sort_order>330</sort_order>
+							<frontend_class>shipping-applicable-country</frontend_class>
+							<source_model>adminhtml/system_config_source_shipping_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</shipping_sallowspecific>
+						<shipping_specificcountry translate="label">
+							<label>Ship to Specific Countries</label>
+							<config_path>carriers/frotel/specificcountry</config_path>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>331</sort_order>
+							<source_model>adminhtml/system_config_source_country</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</shipping_specificcountry>
+
+						<heading_payment translate="label">
+							<label>Payment Settings</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>500</sort_order>
+							<show_in_default>1</show_in_default>
+						</heading_payment>
+						<payment_title translate="label">
+							<label>Title</label>
+							<config_path>payment/frotel/title</config_path>
+							<frontend_type>text</frontend_type>
+							<sort_order>515</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>1</show_in_store>
+						</payment_title>
+						<payment_allowspecific translate="label">
+							<label>Payment from Applicable Countries</label>
+							<config_path>payment/frotel/allowspecific</config_path>
+							<frontend_type>allowspecific</frontend_type>
+							<sort_order>530</sort_order>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</payment_allowspecific>
+						<payment_specificcountry translate="label">
+							<label>Payment from Specific Countries</label>
+							<config_path>payment/frotel/specificcountry</config_path>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>531</sort_order>
+							<source_model>adminhtml/system_config_source_country</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</payment_specificcountry>
+
+
+						<cash_heading_payment translate="label">
+							<label>Online Payment Settings</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>600</sort_order>
+							<show_in_default>1</show_in_default>
+						</cash_heading_payment>
+						<cash_payment_title translate="label">
+							<label>Title</label>
+							<config_path>payment/frotelonline/title</config_path>
+							<frontend_type>text</frontend_type>
+							<sort_order>615</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>1</show_in_store>
+						</cash_payment_title>
+						<cash_payment_allowspecific translate="label">
+							<label>Payment from Applicable Countries</label>
+							<config_path>payment/frotelonline/allowspecific</config_path>
+							<frontend_type>allowspecific</frontend_type>
+							<sort_order>630</sort_order>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</cash_payment_allowspecific>
+						<cash_payment_specificcountry translate="label">
+							<label>Payment from Specific Countries</label>
+							<config_path>payment/frotelonline/specificcountry</config_path>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>631</sort_order>
+							<source_model>adminhtml/system_config_source_country</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</cash_payment_specificcountry>
+
+
+						<moneyorder_heading_payment translate="label">
+							<label>Money Order Payment Settings</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>700</sort_order>
+							<show_in_default>1</show_in_default>
+						</moneyorder_heading_payment>
+						<moneyorder_payment_title translate="label">
+							<label>Title</label>
+							<config_path>payment/frotelmoneyorder/title</config_path>
+							<frontend_type>text</frontend_type>
+							<sort_order>715</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>1</show_in_store>
+						</moneyorder_payment_title>
+						<moneyorder_payment_allowspecific translate="label">
+							<label>Payment from Applicable Countries</label>
+							<config_path>payment/frotelmoneyorder/allowspecific</config_path>
+							<frontend_type>allowspecific</frontend_type>
+							<sort_order>730</sort_order>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</moneyorder_payment_allowspecific>
+						<moneyorder_payment_specificcountry translate="label">
+							<label>Payment from Specific Countries</label>
+							<config_path>payment/frotelmoneyorder/specificcountry</config_path>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>731</sort_order>
+							<source_model>adminhtml/system_config_source_country</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</moneyorder_payment_specificcountry>
+					</fields>
+				</frotel>
+			</groups>
+		</codnitivepaymentmethods>
+	</sections>
+</config>

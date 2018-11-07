@@ -1,0 +1,35 @@
+<?php
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_SamanGateway
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+?>
+<html>
+<meta http-equiv="refresh" content="0; URL=<?php echo $this->getContinueShoppingUrl()?>">
+<head>
+</head>
+<body>
+<div class="page-head">
+    <h3><?php echo $this->__('Error occurred') ?></h3>
+</div>
+<p><?php echo $this->__("Please <a href='%s'>continue shopping</a>.", $this->getContinueShoppingUrl()) ?></p>
+</body>
+</html>

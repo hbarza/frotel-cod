@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_Frotel
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+-->
+
+<config>
+	<modules>
+		<Codnitive_Frotel>
+			<version>1.0.51</version>
+			<title>Frotel COD</title>
+			<link><![CDATA[http://www.codnitive.com/]]></link>
+			<codPool>community</codPool>
+		</Codnitive_Frotel>
+	</modules>
+	<global>
+		<blocks>
+			<frotel>
+				<class>Codnitive_Frotel_Block</class>
+			</frotel>
+			<checkout>
+				<rewrite>
+					<onepage_billing>Codnitive_Frotel_Block_Checkout_Onepage_Billing</onepage_billing>
+					<onepage_shipping>Codnitive_Frotel_Block_Checkout_Onepage_Shipping</onepage_shipping>
+					<cart_shipping>Codnitive_Frotel_Block_Checkout_Cart_Shipping</cart_shipping>
+				</rewrite>
+			</checkout>
+			<customer>
+				<rewrite>
+					<form_register>Codnitive_Frotel_Block_Customer_Form_Register</form_register>
+					<address_edit>Codnitive_Frotel_Block_Customer_Address_Edit</address_edit>
+				</rewrite>
+			</customer>
+		</blocks>
+		<helpers>
+			<frotel>
+				<class>Codnitive_Frotel_Helper</class>
+			</frotel>
+		</helpers>
+		<models>
+			<frotel>
+				<class>Codnitive_Frotel_Model</class>
+				<resourceModel>frotel_resource</resourceModel>
+			</frotel>
+			<frotel_resource>
+				<class>Codnitive_Frotel_Model_Resource</class>
+				<deprecatedNode>frotel_mysql4</deprecatedNode>
+				<entities>
+					<setorder>
+						<table>codnitive_frotel_setorder</table>
+					</setorder>
+				</entities>
+			</frotel_resource>
+		</models>
+		<resources>
+			<frotel_setup>
+				<setup>
+					<module>Codnitive_Frotel</module>
+					<class>Codnitive_Frotel_Model_Resource_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</frotel_setup>
+			<frotel_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</frotel_write>
+			<frotel_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</frotel_read>
+		</resources>
+		<sales>
+			<shipping>
+				<carriers>
+					<frotel>
+						<class>Codnitive_Frotel_Model_Carrier_Post</class>
+					</frotel>
+				</carriers>
+			</shipping>
+		</sales>
+		<fieldsets>
+			<sales_copy_order_billing_address>
+				<frotel_region_id><to_order>*</to_order></frotel_region_id>
+			</sales_copy_order_billing_address>
+			<sales_copy_order_shipping_address>
+				<frotel_region_id><to_order>*</to_order></frotel_region_id>
+			</sales_copy_order_shipping_address>
+			<sales_convert_quote_address>
+				<frotel_region_id><to_order_address>*</to_order_address><to_customer_address>*</to_customer_address></frotel_region_id>
+			</sales_convert_quote_address>
+			<sales_convert_order_address>
+				<frotel_region_id><to_quote_address>*</to_quote_address></frotel_region_id>
+			</sales_convert_order_address>
+			<customer_address>
+				 <frotel_region_id><to_quote_address>*</to_quote_address></frotel_region_id>
+			</customer_address>
+			<checkout_onepage_billing>
+				<frotel_region_id><to_customer>*</to_customer></frotel_region_id>
+			</checkout_onepage_billing>
+
+			<sales_copy_order_billing_address>
+				<frotel_city><to_order>*</to_order></frotel_city>
+			</sales_copy_order_billing_address>
+			<sales_copy_order_shipping_address>
+				<frotel_city><to_order>*</to_order></frotel_city>
+			</sales_copy_order_shipping_address>
+			<sales_convert_quote_address>
+				<frotel_city><to_order_address>*</to_order_address><to_customer_address>*</to_customer_address></frotel_city>
+			</sales_convert_quote_address>
+			<sales_convert_order_address>
+				<frotel_city><to_quote_address>*</to_quote_address></frotel_city>
+			</sales_convert_order_address>
+			<customer_address>
+				 <frotel_city><to_quote_address>*</to_quote_address></frotel_city>
+			</customer_address>
+			<checkout_onepage_billing>
+				<frotel_city><to_customer>*</to_customer></frotel_city>
+			</checkout_onepage_billing>
+		</fieldsets>
+	</global>
+
+	<admin>
+		<fieldsets>
+			<customer_dataflow>
+				<frotel_region_id><billing>1</billing><shipping>1</shipping></frotel_region_id>
+				<frotel_city><billing>1</billing><shipping>1</shipping></frotel_city>
+			</customer_dataflow>
+		</fieldsets>
+	</admin>
+
+	<adminhtml>
+		<translate>
+			<modules>
+				<Codnitive_Frotel>
+					<files>
+						<default>Codnitive_Frotel.csv</default>
+					</files>
+				</Codnitive_Frotel>
+			</modules>
+		</translate>
+	</adminhtml>
+
+	<frontend>
+		<routers>
+			<frotel>
+				<use>standard</use>
+				<args>
+					<module>Codnitive_Frotel</module>
+					<frontName>frotel</frontName>
+				</args>
+			</frotel>
+			<checkout>
+				<args>
+					<modules>
+						<Codnitive_Frotel_Override before="Mage_Checkout">Codnitive_Frotel_Override_Checkout</Codnitive_Frotel_Override>
+					</modules>
+				</args>
+			</checkout>
+		</routers>
+		<events>
+			<checkout_onepage_controller_success_action>
+				<observers>
+					<codnitive_frotel_onepage_success_action>
+						<type>model</type>
+						<class>frotel/checkout_observer</class>
+						<method>sendOrderToFrotel</method>
+					</codnitive_frotel_onepage_success_action>
+				</observers>
+			</checkout_onepage_controller_success_action>
+		</events>
+		<layout>
+			<updates>
+				<frotel>
+					<file>codnitive/frotel.xml</file>
+				</frotel>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+				<Codnitive_Frotel>
+					<files>
+						<default>Codnitive_Frotel.csv</default>
+					</files>
+				</Codnitive_Frotel>
+			</modules>
+		</translate>
+	</frontend>
+
+	<default>
+		<codnitivepaymentmethods>
+			<frotel>
+				<active>0</active>
+				<jquery>1</jquery>
+				<shipping_types>1,2</shipping_types>
+				<payment_types>frotel,frotelonline,frotelmoneyorder</payment_types>
+				<chkfrq>518400</chkfrq>
+				<frtrn>1</frtrn>
+			</frotel>
+		</codnitivepaymentmethods>
+		<carriers>
+			<frotel>
+				<model>frotel/carrier_post</model>
+				<active>1</active>
+				<title>Frotel</title>
+				<orig_region>21</orig_region>
+				<orig_city>1-تهران</orig_city>
+				<include_virtual_price>0</include_virtual_price>
+				<shipping_sallowspecific>1</shipping_sallowspecific>
+				<shipping_specificcountry>IR</shipping_specificcountry>
+				<shipping_showmethod>0</shipping_showmethod>
+			</frotel>
+		</carriers>
+		<payment>
+			<frotel>
+				<model>frotel/method_cashondelivery</model>
+				<active>1</active>
+				<title>Frotel Cash On Delivery</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>IR</specificcountry>
+			</frotel>
+			<frotelonline>
+				<model>frotel/method_online</model>
+				<active>1</active>
+				<title>Frotel Online Payment</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>IR</specificcountry>
+			</frotelonline>
+			<frotelmoneyorder>
+				<model>frotel/method_moneyorder</model>
+				<active>1</active>
+				<title>Frotel Money Order Payment</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>IR</specificcountry>
+			</frotelmoneyorder>
+		</payment>
+	</default>
+</config>

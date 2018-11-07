@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_Frotel
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+-->
+<config>
+	<menu>
+		<codall>
+			<children>
+				<codnitivepaymentmethods trnslate="title">
+					<title>Payment Methods</title>
+					<sort_order>100</sort_order>
+					<children>
+						<frotel trnslate="title" module="frotel">
+							<title>Frotel COD</title>
+							<sort_order>10</sort_order>
+							<action>adminhtml/system_config/edit/section/codnitivepaymentmethods</action>
+						</frotel>
+					</children>
+				</codnitivepaymentmethods>
+			</children>
+		</codall>
+	</menu>
+	<acl>
+		<resources>
+			<all>
+				<title>Allow Everything</title>
+			</all>
+			<admin>
+				<children>
+					<codall>
+						<children>
+							<codnitivepaymentmethods translate="title">
+								<title>Payment Methods</title>
+								<sort_order>100</sort_order>
+								<children>
+									<frotel translate="title" module="frotel">
+										<title>Frotel COD</title>
+										<sort_order>10</sort_order>
+									</frotel>
+								</children>
+							</codnitivepaymentmethods>
+						</children>
+					</codall>
+					<system>
+						<children>
+							<config>
+								<children>
+									<codnitivepaymentmethods>
+										<title>CODNITIVE Payment Section</title>
+									</codnitivepaymentmethods>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>
